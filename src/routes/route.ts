@@ -1,7 +1,9 @@
+
 import { serverInit } from 'config';
-import { kiemTraTonTaiTenDangNhap } from 'controllers/kiemTraTonTaiTenDangNhap';
-import { layDanhSachNguoiDung } from 'controllers/layDanhSachNguoiDung';
-import { themNguoiDung } from 'controllers/themNguoiDung';
+import { DangKy } from 'controllers/TaiKhoan/DangKy';
+import { KiemTraTonTai } from 'controllers/TaiKhoan/KiemTraTonTai';
+import { LayDanhSach } from 'controllers/TaiKhoan/LayDanhSach';
+
 
 import express from 'express';
 
@@ -9,7 +11,7 @@ const app = express();
 
 export const routes = () => {
     serverInit(app);
-    app.use('/themNguoiDung', themNguoiDung());
-    app.use('/layDanhSachNguoiDung', layDanhSachNguoiDung());
-    app.use('/kiemTraTonTaiTenDangNhap', kiemTraTonTaiTenDangNhap());
+    app.use('/dangKyTaiKhoan', DangKy());
+    app.use('/layDanhSachNguoiDung', LayDanhSach());
+    app.use('/kiemTraTonTaiTenDangNhap', KiemTraTonTai());
 }
